@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every project starts with a project node -->
+<!-- the `default` property specifies which `target` will be run if none specified via CLI -->
+<project name="test" default="dist">
+
+    <!-- ============================================  -->
+    <!-- Target: prepare                               -->
+    <!-- ============================================  -->
+    <target name="prepare">
+        <!-- Make a build directory in the current dir `.` -->
+        <echo msg="Making directory ./build" />
+        <mkdir dir="./build" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: build - Dependant on `prepare`        -->
+    <!-- ============================================  -->
+    <target name="build" depends="prepare">
+        <!-- Create our file - (we dont have to do this   -->
+        <!-- the echo below creates it if it don't exist) -->
+        <!-- It's here as a simple example                -->
+        <echo msg="Making new README.txt file in build directory..." />
+        <touch file="./build/README.txt" millis="102134111" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- (DEFAULT) Target: dist - Dependant on `build` -->
+    <!-- ============================================  -->
+    <target name="dist" depends="build">
+        <echo msg="Writing text to the file README.txt..." />
+        <echo file="./build/README.txt" append="false">Writing this msg to README.txt</echo>
+    </target>
+
+</project>

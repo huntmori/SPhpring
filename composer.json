@@ -2,5 +2,9 @@
     "require": {
         "react/socket": "^1.11",
         "react/http": "^1.6"
+    },
+    "require-dev": {
+        "clue/phar-composer": "^1.4",
+        "phing/phing": "^2.17"
     }
 }
