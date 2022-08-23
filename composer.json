@@ -1,11 +1,17 @@
 {
+    "name": "huntmori/sphpring",
     "require": {
-        "react/socket": "^1.11",
-        "react/http": "^1.6"
+        "react/http": "^1.7"
     },
-    "require-dev": {
-        "clue/phar-composer": "^1.4",
-        "phing/phing": "^2.17"
+    "autoload": {
+        "psr-4": {
+            "Sphpring\\": "src/"
+        }
     },
-    "bin":["bin/main"]
+    "authors": [
+        {
+            "name": "huntmori",
+            "email": "huntmori04x22@gmail.com"
+        }
+    ]
 }
