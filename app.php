@@ -9,11 +9,18 @@ use Sphpring\Core\AppBuilder;
 use Sphpring\App\Index\Controller;
 
 $http = new HttpServer(function (Request $request) {
-    new AppBuilder();
-    new Controller\IndexController();
-    foreach(get_declared_classes() as $name){
-       var_dump($name);
+    $testAppBuilder = new AppBuilder();
+    $testController = new Controller\IndexController();
+    $controllers = [];
+
+    try {
+        $reflection = new \ReflectionClass(Controller\IndexController::class);
+        $attributes = $reflection->getAttributes();
+        print_r(array_map(fn($attribute) => $attribute->getName(), $attributes));
+    } catch(ReflectionException | Exception $e) {
+        echo $e->getTraceAsString();
     }
+
     return Response::plainText(
         "Heelo World!\n"
     );

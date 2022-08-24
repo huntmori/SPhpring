@@ -2,8 +2,8 @@
 namespace Sphpring\Core\Controller;
 use \Attribute;
 
-#[Attribute]
-//#[Getter]
+#[Controller]
+#[Attribute(Attribute::TARGET_CLASS)]
 class RestController {
     private string $basePath;
 
