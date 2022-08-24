@@ -13,5 +13,8 @@
             "name": "huntmori",
             "email": "huntmori04x22@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "clue/phar-composer": "^1.4"
+    }
 }
