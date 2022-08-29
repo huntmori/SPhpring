@@ -4,7 +4,7 @@ require_once "vendor/autoload.php";
 use Sphpring\App\Index\Controller\IndexController;
 ini_set('memory_limit','-1');
 try {
-    $controller = new IndexController();
+    /*$controller = new IndexController();
 //    var_dump($controller);
     $reflactor = new ReflectionClass(IndexController::class);
     echo 'attribute';
@@ -12,7 +12,9 @@ try {
 
     $test = factoryTest(IndexController::class, null);
     var_dump($test);
-    var_dump($test->getProperties());
+    var_dump($test->getProperties());*/
+    $classes = get_declared_classes();
+    var_dump($classes);
 } catch (ReflectionException $e) {
     var_dump($e->getTraceAsString());
 }
